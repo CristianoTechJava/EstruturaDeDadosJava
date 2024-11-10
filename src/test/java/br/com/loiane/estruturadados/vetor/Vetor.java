@@ -33,7 +33,7 @@ public class Vetor {
 //
 //    }
 
-    public Boolean adiciona(String elemento){
+    public Boolean adiciona(String elemento) {
 
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
@@ -42,25 +42,43 @@ public class Vetor {
         return false;
     }
 
-    public int tamanho(){
+    public int tamanho() {
         return this.tamanho;
     }
 
-    public String toString(){
+    public String busca(int poisicao) {
+
+        if (!(poisicao >= 0 && poisicao < tamanho)) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        return this.elementos[poisicao];
+    }
+
+    public int busca(String elemento) {
+
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
 
-        for (int i = 0; i < this.tamanho; i++){
+        for (int i = 0; i < this.tamanho; i++) {
             sb.append(this.elementos[i]);
             sb.append(",");
         }
 
-        if(this.tamanho > 0){
-            sb.append((this.elementos[this.tamanho -1]));
+        if (this.tamanho > 0) {
+            sb.append((this.elementos[this.tamanho - 1]));
         }
         sb.append("]");
 
         return sb.toString();
     }
-
 }
