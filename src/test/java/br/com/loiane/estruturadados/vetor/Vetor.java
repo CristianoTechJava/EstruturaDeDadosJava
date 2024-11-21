@@ -42,6 +42,24 @@ public class Vetor {
         return false;
     }
 
+    public Boolean adiciona(int posicao, String elemento){
+        //validar uma posição válida
+        if(!(posicao >=0 && posicao < tamanho)){
+            throw new IllegalArgumentException("Posicação inválida");
+        }
+
+        //vamos agora começar a mover os elementos
+        for(int i = this.tamanho-1; i >= posicao; i--){
+            this.elementos[i+1] = this.elementos[i];
+        }
+
+        //atribuir os elementos para posição
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+        return true;
+    }
+
     public int tamanho() {
         return this.tamanho;
     }
@@ -51,7 +69,6 @@ public class Vetor {
         if (!(poisicao >= 0 && poisicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
         }
-
         return this.elementos[poisicao];
     }
 
@@ -65,6 +82,7 @@ public class Vetor {
         return -1;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
