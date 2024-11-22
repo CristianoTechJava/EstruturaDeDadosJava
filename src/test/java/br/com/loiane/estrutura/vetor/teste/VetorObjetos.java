@@ -1,13 +1,11 @@
-package br.com.loiane.estruturadados.vetor;
+package br.com.loiane.estrutura.vetor.teste;
 
-import java.util.Arrays;
+public class VetorObjetos {
 
-public class Vetor {
-
-    private String[] elementos;
+    private Object[] elementos;
     private int tamanho;
 
-    public Vetor(int capacidade) {
+    public VetorObjetos(int capacidade) {
         this.elementos = new String[capacidade];
         this.tamanho = 0;
     }
@@ -36,7 +34,7 @@ public class Vetor {
     private void aumentaCapacidade(){
 
         if(this.tamanho == this.elementos.length){
-            String[] elementosNovos = new String[this.elementos.length * 2];
+            Object[] elementosNovos = new String[this.elementos.length * 2];
             for(int i =0; i < this.elementos.length; i++){
                 elementosNovos[i] = this.elementos[i];
             }
@@ -44,7 +42,7 @@ public class Vetor {
         }
     }
 
-    public Boolean adiciona(String elemento) {
+    public Boolean adiciona(Object elemento) {
         this.aumentaCapacidade();
 
         if (this.tamanho < this.elementos.length) {
@@ -54,7 +52,7 @@ public class Vetor {
         return false;
     }
 
-    public Boolean adiciona(int posicao, String elemento) {
+    public Boolean adiciona(int posicao, Object elemento) {
         //validar uma posição válida
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posicação inválida");
@@ -78,7 +76,7 @@ public class Vetor {
         return this.tamanho;
     }
 
-    public String busca(int posicao) {
+    public Object busca(int posicao) {
 
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
@@ -86,7 +84,7 @@ public class Vetor {
         return this.elementos[posicao];
     }
 
-    public int busca(String elemento) {
+    public Object busca(String elemento) {
 
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
