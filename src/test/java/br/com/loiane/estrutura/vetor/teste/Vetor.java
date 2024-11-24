@@ -1,4 +1,4 @@
-package br.com.loiane.estruturadados.vetor;
+package br.com.loiane.estrutura.vetor.teste;
 
 import java.util.Arrays;
 
