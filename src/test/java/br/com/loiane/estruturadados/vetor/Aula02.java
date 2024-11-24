@@ -1,6 +1,6 @@
-package br.com.loiane.estrutura.vetor.teste;
+package br.com.loiane.estruturadados.vetor;
 
-import br.com.loiane.estruturadados.vetor.Vetor;
+import br.com.loiane.estrutura.vetor.teste.Vetor;
 
 public class Aula02 {
 

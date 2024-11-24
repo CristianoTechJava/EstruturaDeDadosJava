@@ -1,5 +1,7 @@
 package br.com.loiane.estruturadados.vetor;
 
+import br.com.loiane.estrutura.vetor.teste.Vetor;
+
 public class Aula08 {
     public static void main(String[] args) {
 
